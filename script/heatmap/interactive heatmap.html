@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heatmap</title>
+<style>
+    #plotContainer {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<button onclick="showPlot(1)">EV Car Battery</button>
+<button onclick="showPlot(2)">Home Battery</button>
+<!--<button onclick="showPlot(3)">Prediction error</button>-->
+
+<div id="plotContainer">
+    <!-- Plot will be displayed here -->
+</div>
+
+<script>
+function showPlot(plotNumber) {
+    // Clear previous plot (if any)
+    document.getElementById('plotContainer').innerHTML = '';
+
+    // Create a new plot based on the selected plot number
+    var plot = document.createElement('img');
+    plot.src = 'plot' + plotNumber + '.png'; 
+    document.getElementById('plotContainer').appendChild(plot);
+}
+</script>
+
+</body>
+</html>
